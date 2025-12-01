@@ -1,0 +1,161 @@
+================================================================================
+                    MANTINE COMPONENTS & ATTRIBUTES SUMMARY
+                         Used in This Project
+================================================================================
+
+1. APPSHELL - Main layout wrapper
+   - header={{ height: 56 }} → Sets header height
+   - navbar={{ width, breakpoint, collapsed }} → Configures sidebar
+   - AppShell.Header → Header section
+   - AppShell.Navbar → Sidebar section
+   - AppShell.Main → Main content area
+
+2. BOX - Generic container (like div)
+   - w, h → Width, Height (e.g., w={220}, h="100%")
+   - bg → Background color (e.g., bg="white", bg="#F2F3F9")
+   - p, px, py → Padding (all, horizontal, vertical)
+   - mt, mb, ml, mr → Margins (top, bottom, left, right)
+   - bd → Border (e.g., bd="1px solid var(--mantine-color-gray-3)")
+   - bdrs → Border radius (e.g., bdrs={10})
+   - ta → Text align (e.g., ta="left", ta={{ base: "left", sm: "right" }})
+   - visibleFrom → Show only from breakpoint (e.g., visibleFrom="sm")
+   - component → Render as different element (e.g., component="header")
+
+3. FLEX - Flexbox container
+   - direction → "row" or "column"
+   - justify → "space-between", "flex-start", "flex-end", "center"
+   - align → "center", "flex-start", "flex-end", "stretch"
+   - wrap → "wrap" or "nowrap"
+   - gap → Spacing between items (e.g., gap="sm", gap={4})
+   - flex → Flex grow (e.g., flex={1})
+
+4. STACK - Vertical flex container
+   - gap → Spacing between items
+   - align → Horizontal alignment of children
+   - justify → Vertical alignment of children
+
+5. GROUP - Horizontal flex container
+   - gap → Spacing between items
+   - justify → "space-between", "flex-start", "flex-end"
+   - align → Vertical alignment
+   - wrap → "wrap" or "nowrap"
+
+6. GRID - CSS Grid layout
+   - gutter → Gap between columns
+   - Grid.Col → Grid column
+     - span → Column span (e.g., span={12}, span="auto", span="content")
+     - span={{ base: 12, sm: 6 }} → Responsive spans
+
+7. TEXT - Typography component
+   - fz → Font size (e.g., fz="xs", fz="sm", fz="md", fz="lg", fz="xl")
+   - fw → Font weight (e.g., fw={400}, fw={500}, fw={700})
+   - c → Color (e.g., c="dark", c="dimmed", c="blue", c="#063799")
+   - tt → Text transform (e.g., tt="capitalize", tt="uppercase")
+   - fs → Font style (e.g., fs="italic")
+   - span → Render as inline span
+   - truncate → Truncate with ellipsis
+   - lineClamp → Limit lines (e.g., lineClamp={2})
+   - component → Render as different element (e.g., component="a")
+
+8. CARD - Card container with shadow
+   - shadow → Shadow size (e.g., shadow="sm")
+   - radius → Border radius (e.g., radius="md")
+   - withBorder → Add border
+   - p → Padding
+
+9. BUTTON - Clickable button
+   - variant → "filled", "outline", "light", "subtle"
+   - color → Button color
+   - bg → Background color override
+   - size → "xs", "sm", "md", "lg"
+   - radius → Border radius
+
+10. ACTIONICON - Icon button
+    - variant → "filled", "outline", "light"
+    - radius → Border radius
+    - size → Icon size
+    - color → Icon color
+
+11. UNSTYLEDBUTTON - Button without styles
+    - Used for custom clickable elements
+    - Accepts all Box props
+
+12. BADGE - Small label/tag
+    - color → Badge color
+    - variant → "filled", "light", "outline"
+    - size → "xs", "sm", "md"
+    - radius → Border radius
+    - tt → Text transform
+
+13. INPUT - Form input
+    - placeholder → Placeholder text
+    - size → Input size
+    - radius → Border radius
+    - rightSection → Component on right side
+
+14. PROGRESS - Progress bar
+    - value → Progress value (0-100)
+    - size → Bar height
+    - color → Bar color
+    - radius → Border radius
+
+15. DIVIDER - Horizontal/vertical line
+    - size → Line thickness
+    - color → Line color
+    - w → Width
+
+16. TOOLTIP - Hover tooltip
+    - label → Tooltip text
+    - position → "top", "right", "bottom", "left"
+    - transitionProps → Animation settings
+
+17. BURGER - Hamburger menu icon
+    - opened → Current state
+    - onClick → Click handler
+    - size → Icon size
+    - hiddenFrom → Hide from breakpoint
+
+18. SCROLLAREA - Scrollable container
+    - h → Height
+    - px → Horizontal padding
+
+================================================================================
+                         RESPONSIVE PROPS SYNTAX
+================================================================================
+
+Use object syntax for responsive values:
+- w={{ base: "100%", sm: 200, md: 300 }}
+- fz={{ base: "xs", sm: "sm" }}
+- justify={{ base: "flex-start", sm: "flex-end" }}
+- span={{ base: 12, sm: 6, md: 4 }}
+
+Breakpoints:
+- base → All screens (mobile first)
+- xs → 576px+
+- sm → 768px+
+- md → 992px+
+- lg → 1200px+
+- xl → 1400px+
+
+================================================================================
+                            MANTINE HOOKS
+================================================================================
+
+1. useDisclosure - Toggle state management
+   - const [opened, { toggle }] = useDisclosure(false);
+
+2. useMediaQuery - Responsive breakpoint detection
+   - const isAboveSm = useMediaQuery("(min-width: 48em)");
+
+================================================================================
+                         CSS VARIABLES
+================================================================================
+
+Mantine provides CSS variables for colors:
+- var(--mantine-color-blue-6)
+- var(--mantine-color-gray-3)
+- var(--mantine-radius-md)
+- var(--mantine-shadow-sm)
+
+================================================================================
+
