@@ -16,10 +16,10 @@ import {
 import { IconTrash, IconPencil } from "@tabler/icons-react";
 import { cardConfig } from "@/data/card.config";
 export default function CardSection() {
-  return (
+   return (
     <>
       {cardConfig.map((card) => (
-        <Card key={card?.id} shadow="sm" radius="md" mt={10}>
+        <Card key={card.id} shadow="sm" radius="md" mt={10}>
           {/*start header*/}
           <Group justify="space-between" align="center" mb="md">
             <Text fw={600} fz={{ base: "sm", sm: "md" }}>
@@ -34,9 +34,9 @@ export default function CardSection() {
                 bdrs={6}
                 bd={"1px solid var(--mantine-color-gray-4)"}
               >
-                {card?.jobId}
+                {card.jobId}
               </Text>
-              {card?.title}
+              {card.title}
             </Text>
 
             <Group gap="xs">
@@ -84,7 +84,7 @@ export default function CardSection() {
                     requisition Type
                   </Text>
                   <Text tt="capitalize" fz={{ base: "xs", sm: "sm" }} c="black">
-                    {card?.requisitionType}{" "}
+                    {card.requisitionType}
                   </Text>
                 </Box>
 
@@ -98,7 +98,7 @@ export default function CardSection() {
                     org Structure
                   </Text>
                   <Text fz={{ base: "xs", sm: "sm" }} c="black">
-                    {card?.orgStructure}
+                    {card.orgStructure}
                   </Text>
                 </Box>
 
@@ -112,8 +112,8 @@ export default function CardSection() {
                     units
                   </Text>
                   <Text fz={{ base: "xs", sm: "sm" }} c="black" lineClamp={2}>
-                    {" "}
-                    {card?.units?.join(", ")}
+                     
+                   {card.units.join(", ")}
                   </Text>
                 </Box>
 
@@ -122,49 +122,35 @@ export default function CardSection() {
                   size={1}
                   color="gray.4"
                 />
-                <Box>
-                  <Text
-                    fw={800}
-                    fz={{ base: "xs", sm: "sm" }}
-                    c="dark"
-                    tt="capitalize"
-                  >
-                    recruiters
-                  </Text>
-                  {card?.recruiters?.[0] && (
-                    <Badge
-                      color={card?.recruiters[0].color}
-                      variant="light"
-                      size="sm"
-                      radius="lg"
+                {card.sections.map((section, sectionIdx) => (
+                  <Box key={sectionIdx}>
+                    <Text
+                      fw={800}
+                      fz={{ base: "xs", sm: "sm" }}
+                      c="dark"
                       tt="capitalize"
                     >
-                      {card?.recruiters[0].name}
-                    </Badge>
-                  )}
-                </Box>
-
-                <Box>
-                  <Text
-                    fw={800}
-                    fz={{ base: "xs", sm: "sm" }}
-                    c="dark"
-                    tt="capitalize"
-                  >
-                    hiring managers
-                  </Text>
-                  {card?.hiringManagers?.[0] && (
-                    <Badge
-                      bg={card?.hiringManagers[0].bgColor}
-                      c="black"
-                      size="sm"
-                      radius="lg"
-                      tt="capitalize"
-                    >
-                      {card?.hiringManagers[0].name}
-                    </Badge>
-                  )}
-                </Box>
+                      {section.label}
+                    </Text>
+                    <Flex gap="xs" wrap="wrap">
+                      {section.items.map((item, idx) => (
+                        <Badge
+                          key={idx}
+                          color={item.color}
+                          bg={item.bgColor}
+                          c={item.c}
+                          variant={item.variant}
+                          size="sm"
+                          radius="lg"
+                          tt="capitalize"
+                        >
+                          {item.name}
+                        </Badge>
+                      ))}
+                    </Flex>
+                  </Box>
+                ))}
+               
               </Stack>
             </Grid.Col>
 
@@ -178,8 +164,7 @@ export default function CardSection() {
                   base: "flex-start",
                   sm: "flex-start",
                   md: "flex-end",
-                  lg: "flex-end",
-                  xl: "flex-end",
+                
                 }}
               >
                 <Box ta={{ base: "left", sm: "right" }} w="100%">
@@ -232,8 +217,8 @@ export default function CardSection() {
                       {card?.status.text}
                     </Text>
                     <Text span c="dimmed" fs="italic">
-                      {" "}
-                      by {card?.status.approvedBy} on {card?.status.date} at{" "}
+                      
+                      by {card?.status.approvedBy} on {card?.status.date} at 
                       {card?.status.time}
                     </Text>
                   </Text>

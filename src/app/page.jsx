@@ -1,5 +1,12 @@
-import { redirect } from "next/navigation";
-
+import SearchSection from '@/components/SearchSection'
+import Vacancies from '@/components/Vacancies'
+import CardSection from '@/components/CardSection'
 export default function Home() {
-  redirect("/card");
+return (
+  <>
+     <SearchSection />
+      <Vacancies />
+      <CardSection />
+  </>
+)
 }

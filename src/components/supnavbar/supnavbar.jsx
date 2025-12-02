@@ -42,7 +42,7 @@ export default function SubNavbar() {
               {link?.hasPlus && (
                 <IconPlus
                   size={16}
-                  color={active === index ? "white" : "#878282"}
+                  color={active === index ? "#fff" : "#878282"}
                 />
               )}
             </Group>

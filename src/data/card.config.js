@@ -6,16 +6,14 @@ export const cardConfig = [
     requisitionType: "new vacancy",
     orgStructure: "fatima sh",
     units: ["fatima11", "fatima21", "fatima31", "fatima41", "fatima51"],
-    recruiters: [
+    sections: [
       {
-        name: "khitam hm22",
-        color: "blue",
+        label: "recruiters",
+        items: [{ name: "khitam hm22", color: "blue", variant: "light" }],
       },
-    ],
-    hiringManagers: [
       {
-        name: "fatima hiring",
-        bgColor: "green.1",
+        label: "hiring managers",
+        items: [{ name: "fatima hiring", bgColor: "green.1", c: "black" }],
       },
     ],
     status: {
@@ -39,16 +37,14 @@ export const cardConfig = [
     requisitionType: "new vacancy",
     orgStructure: "fatima sh",
     units: ["fatima11", "fatima21", "fatima31", "fatima41", "fatima51"],
-    recruiters: [
+    sections: [
       {
-        name: "khitam hm22",
-        color: "blue",
+        label: "recruiters",
+        items: [{ name: "khitam hm22", color: "blue", variant: "light" }],
       },
-    ],
-    hiringManagers: [
       {
-        name: "fatima hiring",
-        bgColor: "green.1",
+        label: "hiring managers",
+        items: [{ name: "fatima hiring", bgColor: "green.1", c: "black" }],
       },
     ],
     status: {
