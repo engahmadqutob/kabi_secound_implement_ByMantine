@@ -1,26 +1,9 @@
 "use client";
-
 import { useState } from "react";
-import {
-  IconFolder,
-  IconBrandRedhat,
-  IconGauge,
-  IconHome2,
-  IconBriefcase,
-  IconSettings,
-  IconUser,
-  IconBuilding,
-} from "@tabler/icons-react";
 import { Stack, Tooltip, UnstyledButton } from "@mantine/core";
+import { navbarConfig } from "@/data/navbar.config";
 
-interface NavbarLinkProps {
-  icon: typeof IconHome2; //“This prop must be a component, not a string or number.
-  label: string;
-  active?: boolean;
-  onClick?: () => void;
-}
-
-function NavbarLink({ icon: Icon, label, active, onClick }: NavbarLinkProps) {
+function NavbarLink({ icon: Icon, label, active, onClick }) {
   return (
     <Tooltip label={label} position="right" transitionProps={{ duration: 0 }}>
       <UnstyledButton
@@ -44,23 +27,13 @@ function NavbarLink({ icon: Icon, label, active, onClick }: NavbarLinkProps) {
   );
 }
 
-const mockdata = [
-  { icon: IconGauge, label: "IconGauge" },
-  { icon: IconBriefcase, label: "IconBriefcase" },
-  { icon: IconFolder, label: "IconFolder" },
-  { icon: IconBuilding, label: "IconBuilding" },
-  { icon: IconUser, label: "IconUser" },
-  { icon: IconBrandRedhat, label: "IconBrandRedhat" },
-  { icon: IconSettings, label: "Settings" },
-];
-
 export default function Navbar() {
   const [active, setActive] = useState(0);
 
-  const links = mockdata.map((link, index) => (
+  const links = navbarConfig.map((link, index) => (
     <NavbarLink
       {...link}
-      key={link.label}
+      key={link?.label}
       active={index === active}
       onClick={() => setActive(index)}
     />
@@ -74,7 +47,8 @@ export default function Navbar() {
       h="100%"
       p="md"
       bg="white"
-     >
+      style={{ borderRight: "1px solid var(--mantine-color-gray-3)" }}
+    >
       <Stack justify="center" gap={0} mt={0}>
         {links}
       </Stack>

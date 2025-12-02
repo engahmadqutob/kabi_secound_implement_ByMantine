@@ -2,17 +2,7 @@
 import { useState } from "react";
 import { Box, Text, Stack, Group, UnstyledButton } from "@mantine/core";
 import { IconPlus } from "@tabler/icons-react";
-
-const links = [
-  { label: "Budget Vacancies", hasPlus: false },
-  { label: "Budget Vacancy Approval", hasPlus: false },
-  { label: "Job Requisitions", hasPlus: false },
-  { label: "Published Jobs", hasPlus: false },
-  { label: "Interviews", hasPlus: true },
-  { label: "Shared Profiles", hasPlus: false },
-  { label: "Shared Offers", hasPlus: true },
-  { label: "Shared Applicants", hasPlus: true },
-];
+import { supnavbarConfig } from "@/data/supnavbar";
 
 export default function SubNavbar() {
   const [active, setActive] = useState(1);
@@ -27,9 +17,9 @@ export default function SubNavbar() {
       bdrs={10}
     >
       <Stack gap={0} w="100%">
-        {links.map((link, index) => (
+        {supnavbarConfig.links.map((link, index) => (
           <UnstyledButton
-            key={link.label}
+            key={link?.label}
             onClick={() => setActive(index)}
             px="sm"
             py="xs"
@@ -45,11 +35,11 @@ export default function SubNavbar() {
               <Text
                 fz="sm"
                 c={active === index ? "white" : "dark"}
-                radius={index === 0 ? "md" : 0}
+                tt="capitalize"
               >
-                {link.label}
+                {link?.label}
               </Text>
-              {link.hasPlus && (
+              {link?.hasPlus && (
                 <IconPlus
                   size={16}
                   color={active === index ? "white" : "#878282"}
