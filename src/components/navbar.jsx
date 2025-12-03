@@ -5,7 +5,7 @@ import { navbarConfig } from "@/data/navbar.config";
 
 function NavbarLink({ icon: Icon, label, active, onClick }) {
   return (
-    <Tooltip label={label} position="right" transitionProps={{ duration: 0 }}>
+    <Tooltip label={label} position="right"  >
       <UnstyledButton
         onClick={onClick}
         w={50}
@@ -29,7 +29,7 @@ function NavbarLink({ icon: Icon, label, active, onClick }) {
 
 export default function Navbar() {
   const [active, setActive] = useState(0);
-
+  
   const links = navbarConfig.map((link, index) => (
     <NavbarLink
       {...link}

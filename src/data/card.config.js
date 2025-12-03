@@ -8,10 +8,12 @@ export const cardConfig = [
     units: ["fatima11", "fatima21", "fatima31", "fatima41", "fatima51"],
     sections: [
       {
+        id: 1,
         label: "recruiters",
         items: [{ name: "khitam hm22", color: "blue", variant: "light" }],
       },
       {
+        id: 2,
         label: "hiring managers",
         items: [{ name: "fatima hiring", bgColor: "green.1", c: "black" }],
       },

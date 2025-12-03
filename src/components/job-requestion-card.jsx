@@ -15,7 +15,8 @@ import {
 } from "@mantine/core";
 import { IconTrash, IconPencil } from "@tabler/icons-react";
 import { cardConfig } from "@/data/card.config";
-export default function CardSection() {
+import RecruitersSection from "./recruiters";
+export default function JobRequestionCard() {
    return (
     <>
       {cardConfig.map((card) => (
@@ -122,39 +123,12 @@ export default function CardSection() {
                   size={1}
                   color="gray.4"
                 />
-                {card.sections.map((section, sectionIdx) => (
-                  <Box key={sectionIdx}>
-                    <Text
-                      fw={800}
-                      fz={{ base: "xs", sm: "sm" }}
-                      c="dark"
-                      tt="capitalize"
-                    >
-                      {section.label}
-                    </Text>
-                    <Flex gap="xs" wrap="wrap">
-                      {section.items.map((item, idx) => (
-                        <Badge
-                          key={idx}
-                          color={item.color}
-                          bg={item.bgColor}
-                          c={item.c}
-                          variant={item.variant}
-                          size="sm"
-                          radius="lg"
-                          tt="capitalize"
-                        >
-                          {item.name}
-                        </Badge>
-                      ))}
-                    </Flex>
-                  </Box>
-                ))}
-               
+              {card.sections?.map((section, sectionIndex) => (
+                <RecruitersSection key={sectionIndex} section={section}/>
+              ))}
               </Stack>
             </Grid.Col>
 
-            {/*  Current Requisition Status - fixed width */}
             <Grid.Col
               span={{ base: 12, sm: "content" }}
               w={{ base: "100%", sm: "100%", md: "60%", lg: "68%" }}

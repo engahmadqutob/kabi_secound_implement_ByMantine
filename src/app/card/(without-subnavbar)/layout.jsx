@@ -1,34 +1,5 @@
-"use client";
+import AppShellWithoutSubnavbar from "@/components/app-shell-without-subnavbar";
 
-import { AppShell, Box, Flex } from "@mantine/core";
-import Header from "@/components/header/header";
-import Navbar from "@/components/navbar/navbar";
-import { useDisclosure, useMediaQuery } from "@mantine/hooks";
 export default function CardLayout({ children }) {
-  const [opened, { toggle }] = useDisclosure(false);
-  const isAboveSm = useMediaQuery("(min-width: 48em)"); //768px
-  const navbarCollapsed = isAboveSm ? false : !opened;
-
-  return (
-    <AppShell
-      header={{ height: 56 }}
-      navbar={{
-        width: { base: 80, sm: 80, md: 80, lg: 80, xl: 80 },
-        breakpoint: 0,
-        collapsed: { desktop: navbarCollapsed },
-      }}
-      padding="md"
-    >
-      <AppShell.Header>
-        <Header toggle={toggle} opened={opened} />
-      </AppShell.Header>
-      <AppShell.Navbar mt={2} p={0} bg="transparent" withBorder={false}>
-        <Box h="100%">
-          <Navbar />
-        </Box>
-      </AppShell.Navbar>
-
-      <AppShell.Main>{children}</AppShell.Main>
-    </AppShell>
-  );
+  return <AppShellWithoutSubnavbar>{children}</AppShellWithoutSubnavbar>;
 }

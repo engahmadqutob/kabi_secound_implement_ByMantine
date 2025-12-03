@@ -6,8 +6,7 @@ import { supnavbarConfig } from "@/data/supnavbar";
 
 export default function SubNavbar() {
   const [active, setActive] = useState(1);
-
-  return (
+   return (
     <Box
       w={220}
       h="100%"

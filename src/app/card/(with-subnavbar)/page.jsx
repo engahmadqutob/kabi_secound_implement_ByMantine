@@ -1,12 +1,12 @@
-import CardSection from "@/components/card/card";
-import SearchSection from "@/components/search/search";
-import Vacancies from "@/components/vacancies/vacancies";
+import JobRequestionCard from "@/components/job-requestion-card";
+import SearchSection from "@/components/search";
+import Vacancies from "@/components/vacancies";
 export default function Card() {
   return (
     <>
       <SearchSection />
       <Vacancies />
-      <CardSection />
+      <JobRequestionCard />
     </>
   );
 }

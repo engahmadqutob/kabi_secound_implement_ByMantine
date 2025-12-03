@@ -6,15 +6,14 @@ import { Roboto } from "next/font/google";
 
 const roboto = Roboto({
   subsets: ["latin"],
-  weight: ["400", "500", "700"], // choose what you need
+  weight: ["400", "500", "700"],  
 });
- 
- 
+
 export const metadata: Metadata = {
-  title: "card app",
+  title: "Hiring Dashboard",
 };
 
-export default function RootLayout({
+export default function Layout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -22,7 +21,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${roboto.className}`}>
-        <MantineProvider>{children}</MantineProvider>
+        <MantineProvider>
+          {children}
+        </MantineProvider>
       </body>
     </html>
   );

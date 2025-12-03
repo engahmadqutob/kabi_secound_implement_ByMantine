@@ -2,7 +2,7 @@
 import { Box, Group, Flex, Text, Burger, Button } from "@mantine/core";
 import Image from "next/image";
 import { headerConfig } from "@/data/header.config";
-export default function Header({ toggle, opened }) {
+export default function TopHeader({ toggle, opened }) {
   const { user, language } = headerConfig;
   return (
     <Box component="header" bg="white" bd="1px solid gray.3">
